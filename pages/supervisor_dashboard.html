@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Dashboard</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+    /* Global styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .dashboard-container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 240px;
+      background-color: #26442d;
+      color: white;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content styles */
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
+
+    .main-content section {
+      margin-bottom: 60px;
+    }
+
+    .main-content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #26442d;
+    }
+
+    .overview-grid, .progress-grid {
+      display: flex;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+    }
+
+    button {
+      background-color: #7ec175;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #7ec175;
+    }
+
+    /* Responsive for mobile screens */
+    @media (max-width: 768px) {
+      .dashboard-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .overview-grid, .progress-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Supervisor Dashboard</h2>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#case-management">Case Management</a></li>
+        <li><a href="#therapy-plan-management">Therapy Plan Management</a></li>
+        <li><a href="#progress-reporting">Progress Reporting</a></li>
+        <li><a href="#clinical-rating">Clinical Rating</a></li>
+        <li><a href="#reports-analytics">Reports and Analytics</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Overview -->
+      <section id="overview">
+        <h3>Overview</h3>
+        <div class="overview-grid">
+          <div class="card">
+            <h4>Ongoing Cases</h4>
+            <p>50</p>
+          </div>
+          <div class="card">
+            <h4>Therapists Available</h4>
+            <p>12</p>
+          </div>
+          <div class="card">
+            <h4>Reviews Due</h4>
+            <p>5</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case Management -->
+      <section id="case-management">
+        <h3>Case Management</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Case ID</th>
+              <th>Patient Name</th>
+              <th>Therapist Alloted</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>101</td>
+              <td>Sam </td>
+              <td>Dr. Amit </td>
+              <td>Active</td>
+              <td><button>Review Case</button></td>
+            </tr>
+            <tr>
+              <td>102</td>
+              <td>Ram</td>
+              <td>Dr. Rahul </td>
+              <td>Closed</td>
+              <td><button>Reassign Case</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Therapy Plan Management -->
+      <section id="therapy-plan-management">
+        <h3>Therapy Plan Management</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Case ID</th>
+              <th>Therapist Name</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>201</td>
+              <td>Dr Amit</td>
+              <td>Ongoing</td>
+              <td><button>Provide Feedback</button></td>
+            </tr>
+            <tr>
+              <td>202</td>
+              <td>Dr Rahul</td>
+              <td>Completed</td>
+              <td><button>Provide Feedback</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Progress Reporting -->
+      <section id="progress-reporting">
+        <h3>Progress Reporting</h3>
+        <div class="progress-grid">
+          <div class="card">
+            <h4>Sessions Completed</h4>
+            <p>10</p>
+            <button>View Report</button>
+          </div>
+          <div class="card">
+            <h4>Sessions Pending</h4>
+            <p>2</p>
+            <button>Submit Report</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clinical Rating -->
+      <section id="clinical-rating">
+        <h3>Clinical Rating</h3>
+        <div class="card">
+          <p>Rate the quality and effectiveness of therapy sessions and the overall case.</p>
+          <button>Rate Now</button>
+        </div>
+      </section>
+
+      <!-- Reports and Analytics -->
+      <section id="reports-analytics">
+        <h3>Reports and Analytics</h3>
+        <div class="card">
+          <p>Generate detailed reports on case status, session completion, and overall performance.</p>
+          <button>Generate Report</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
