@@ -8,7 +8,8 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: url("../assets/images/login/index.png");
+    background: url("C:/Users/w10/Documents/GitHub/SpeechGuide/assete/images/login/index.png"); 
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -21,12 +22,13 @@ body{
     min-height: 110vh;
     background: rgba(39, 39, 39, 0.4);
 }
-.nav{
+
+ .nav{
     position: fixed;
     top: 0;
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 100vw;
     height: 100px;
     line-height: 100px;
     background: linear-gradient(rgba(39,39,39, 0.6), transparent);
@@ -49,7 +51,7 @@ body{
     color: #fff;
     padding-bottom: 15px;
     margin: 0 25px;
-}
+} 
 .link:hover, .active{
     border-bottom: 2px solid #fff;
 }

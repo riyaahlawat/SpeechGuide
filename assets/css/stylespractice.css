@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    color: #333;
+}
+
+#prompt-container {
+    margin-bottom: 20px;
+}
+
+#prompt {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    animation: textZoom 1s ease-in-out;
+}
+
+@keyframes textZoom {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#start-btn, #listen-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#start-btn:hover, #listen-btn:hover {
+    background-color: #45a049;
+}
+
+#result, #final-score {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
