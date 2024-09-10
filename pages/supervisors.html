@@ -132,6 +132,19 @@
             y.style.opacity = 1;
         }
     }
+    async function submitForm(event, formType) {
+        
+        event.preventDefault();
+        
+        if (formType === 'login') {
+            // Redirect to dashboard on login
+            window.location.href = 'supervisor_dashboard.html';
+        } else if (formType === 'register') {
+            // Redirect to dashboard on registration
+            window.location.href = 'supervisor_dashboard.html';
+        }
+    
+        }
 
     /*
     async function submitForm(event, formType) {
