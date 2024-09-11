@@ -8,7 +8,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: url("C:/Users/w10/Documents/GitHub/SpeechGuide/assete/images/login/index.png"); 
+    background: url("../images/login/index.png"); 
     
     background-size: cover;
     background-repeat: no-repeat;
