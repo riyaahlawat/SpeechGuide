@@ -6,45 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=1024">
     <link rel="stylesheet" href="..\assets\css\home_styles.css">
-    <style>
-        /* Override the background property */
-        body {
-            background-image: url('..\\assets\\images\\home\\home.png');
-            /* Add any other styling you want */
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0; /* Optional: Background color */
-        }
-        
-        
-    </style>
-    <!-- Include the same CSS file -->
-
     <title>Home Page</title>
     
 </head>
 <body>
+    <nav class="navbar">
+        <div class="title">Speech Guide</div>
+        <ul>
+            <li><a href="practice.html" class="link">Practice now!</a></li>
+            <li><a href="resources.html" class="link">History and Progress</a></li>
+            <li><a href="reviews.html" class="link">Calendar and reminders!</a></li>
+            <li><a href="reviews.html" class="link">Contact us</a></li>
+            <li><a href="index.html" class="link">Logout</a></li>
+        </ul>
+    </nav>
+
     <div class="wrapper">
-        <nav class="nav" style="background-color: rgb(50, 5, 81);">
-            <div class="nav-logo">
-                <p style="color:white">Speech Guide</p>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                <ul>
-                    <!-- The # symbol is used as the value of the href attribute. When a user clicks on this link, it typically doesn't navigate to a different page or location; instead, it refers to the current page itself. In other words, clicking on this link doesn't cause any navigation action to occur. -->
-                    <li><a href="resources.html" class="link">History and Progress</a></li>
-                    <li><a href="reviews.html" class="link">Calendar and reminders!</a></li>
-                    <li><a href="reviews.html" class="link">Contact us for Support</a></li>
-                    <li><a href="practice.html" class="link">Practice now!</a></li>
-                    <li><a href="index.html" class="link">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
+        
         <!-- Marquee for continuous floating images -->
         <div class="marquee-container">
                     <marquee behavior="scroll" direction="left" scrollamount="10" loop="infinite">
