@@ -1,44 +1,28 @@
-// List of tongue twisters
-const tongueTwisters = [
-    "She sells seashells by the seashore.",
-    "Peter Piper picked a peck of pickled peppers.",
-    "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
-    "I scream, you scream, we all scream for ice cream.",
-    "Fuzzy Wuzzy was a bear. Fuzzy Wuzzy had no hair."
-];
-let currentTwister = '';
-let correctCount = 0;
-let totalCount = 0;
-const maxPrompts = 5;
+// JavaScript for handling navigation and showing content
+function showContent(section) {
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.style.display = 'none');
+    
+    document.getElementById(section).style.display = 'block';
 
-const promptElement = document.getElementById('prompt');
-const resultElement = document.getElementById('result');
-const finalScoreElement = document.getElementById('final-score');
-const startButton = document.getElementById('start-btn');
-const listenButton = document.getElementById('listen-btn');
+    // Remove active class from all links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => link.classList.remove('active'));
 
-// Function to prompt the user with a random tongue twister
-function promptTwister() {
-    const randomIndex = Math.floor(Math.random() * tongueTwisters.length);
-    currentTwister = tongueTwisters[randomIndex];
-    promptElement.textContent = `Say: "${currentTwister}"`;
-    promptElement.style.animation = 'none'; // Reset animation
-    setTimeout(() => {
-        promptElement.style.animation = ''; // Restart animation for effect
-    }, 10); 
+    // Add active class to clicked link
+    event.target.classList.add('active');
 }
 
-// Play the correct pronunciation of the current tongue twister
-function playPronunciation(text) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
+// JavaScript for handling speech exercise
+function playTwister() {
+    const utterance = new SpeechSynthesisUtterance("She sells seashells by the seashore.");
     speechSynthesis.speak(utterance);
 }
 
-// Start speech recognition
 function startSpeechRecognition() {
+    // Check if the browser supports the Web Speech API
     if (!('webkitSpeechRecognition' in window)) {
-        alert('Your browser does not support speech recognition.');
+        alert("Your browser does not support speech recognition. Please try using Chrome.");
         return;
     }
 
@@ -47,61 +31,118 @@ function startSpeechRecognition() {
     recognition.interimResults = false;
     recognition.maxAlternatives = 1;
 
-    function nextRound() {
-        if (totalCount < maxPrompts) {
-            promptTwister(); // Prompt the next twister
-            recognition.start();
-            listenButton.style.display = 'inline-block'; // Show the "Listen" button for each round
+    recognition.onstart = function() {
+        document.getElementById('result-message').innerHTML = "Listening...";
+    };
+
+    recognition.onresult = function(event) {
+        const userSpeech = event.results[0][0].transcript;
+        document.getElementById('user-speech').innerHTML = "You said: " + userSpeech;
+        
+        // Check if user said the correct tongue twister
+        if (userSpeech.toLowerCase() === "she sells seashells by the seashore") {
+            document.getElementById('result-message').innerHTML = "Great job! You said it correctly!";
         } else {
-            showFinalScore();
+            document.getElementById('result-message').innerHTML = "Oops! Try again.";
         }
+    };
+
+    recognition.onerror = function(event) {
+        document.getElementById('result-message').innerHTML = "Error occurred in recognition: " + event.error;
+    };
+
+    recognition.start();
+}
+
+// Function to switch between sections
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.content');
+    sections.forEach(section => section.style.display = 'none');
+    
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+// Exercise 1: Tongue Twister
+function playTwister() {
+    const utterance = new SpeechSynthesisUtterance("She sells seashells by the seashore.");
+    speechSynthesis.speak(utterance);
+}
+
+function startSpeechRecognition() {
+    // Similar logic as in the previous code, adapted for Exercise 1
+    startRecognition("She sells seashells by the seashore", 'user-speech', 'result-message');
+}
+
+// Exercise 2: Sentence Practice
+function playTwister2() {
+    const utterance = new SpeechSynthesisUtterance("The quick brown fox jumps over the lazy dog.");
+    speechSynthesis.speak(utterance);
+}
+
+function startSpeechRecognition2() {
+    startRecognition("The quick brown fox jumps over the lazy dog", 'user-speech2', 'result-message2');
+}
+
+// Exercise 3: Word Pronunciation
+function playTwister3() {
+    const utterance = new SpeechSynthesisUtterance("Supercalifragilisticexpialidocious");
+    speechSynthesis.speak(utterance);
+}
+
+function startSpeechRecognition3() {
+    startRecognition("Supercalifragilisticexpialidocious", 'user-speech3', 'result-message3');
+}
+
+// Common function to handle speech recognition
+function startRecognition(correctPhrase, userSpeechElementId, resultMessageElementId) {
+    if (!('webkitSpeechRecognition' in window)) {
+        alert("Your browser does not support speech recognition.");
+        return;
     }
 
-    recognition.onresult = function (event) {
-        const spokenTwister = event.results[0][0].transcript.trim().toLowerCase();
-        totalCount++;
+    const recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
 
-        if (spokenTwister === currentTwister.toLowerCase()) {
-            correctCount++;
-            resultElement.textContent = `Correct! Score: ${correctCount}/${totalCount}`;
+    recognition.onstart = function() {
+        document.getElementById(resultMessageElementId).innerHTML = "Listening...";
+    };
+
+    recognition.onresult = function(event) {
+        const userSpeech = event.results[0][0].transcript;
+        document.getElementById(userSpeechElementId).innerHTML = "You said: " + userSpeech;
+        
+        if (userSpeech.toLowerCase() === correctPhrase.toLowerCase()) {
+            document.getElementById(resultMessageElementId).innerHTML = "Great job! You said it correctly!";
         } else {
-            resultElement.textContent = `Incorrect! You said "${spokenTwister}". Score: ${correctCount}/${totalCount}`;
+            document.getElementById(resultMessageElementId).innerHTML = "Oops! Try again.";
         }
-
-        recognition.stop();
-        nextRound();
     };
 
-    recognition.onerror = function (event) {
-        resultElement.textContent = `Error occurred in recognition: ${event.error}`;
+    recognition.onerror = function(event) {
+        document.getElementById(resultMessageElementId).innerHTML = "Error occurred in recognition: " + event.error;
     };
 
-    recognition.onspeechend = function () {
-        recognition.stop();
-    };
-
-    // Start the first round
-    nextRound();
+    recognition.start();
 }
 
-// Show the final score
-function showFinalScore() {
-    promptElement.textContent = "Game Over!";
-    finalScoreElement.textContent = `Final Score: ${correctCount}/${maxPrompts}`;
-    resultElement.textContent = "";
-    listenButton.style.display = 'none'; // Hide the "Listen" button when the game is over
+// Functions for Exercise 4: Number Pronunciation
+function playTwister4() {
+    const utterance = new SpeechSynthesisUtterance("Eight, Thirty-five, Two hundred, Forty-one");
+    speechSynthesis.speak(utterance);
 }
 
-// Event listener for the start button
-startButton.addEventListener('click', () => {
-    correctCount = 0;
-    totalCount = 0;
-    resultElement.textContent = '';
-    finalScoreElement.textContent = '';
-    startSpeechRecognition();
-});
+function startSpeechRecognition4() {
+    startRecognition("Eight, Thirty-five, Two hundred, Forty-one", 'user-speech4', 'result-message4');
+}
 
-// Event listener for the listen button to play the correct pronunciation
-listenButton.addEventListener('click', () => {
-    playPronunciation(currentTwister);
-});
+// Functions for Exercise 5: Paragraph Reading
+function playTwister5() {
+    const utterance = new SpeechSynthesisUtterance("Once upon a time, in a land far, far away, there lived a young prince...");
+    speechSynthesis.speak(utterance);
+}
+
+function startSpeechRecognition5() {
+    startRecognition("Once upon a time, in a land far, far away, there lived a young prince who loved to explore the enchanted forest...", 'user-speech5', 'result-message5');
+}

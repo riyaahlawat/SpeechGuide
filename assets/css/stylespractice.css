@@ -1,74 +1,275 @@
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: "Arial", sans-serif;
+    background-color: #f9fafb;
     margin: 0;
-}
-
-.container {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
-}
-
-h1 {
+    padding: 0;
     color: #333;
-}
-
-#prompt-container {
-    margin-bottom: 20px;
-}
-
-#prompt {
-    font-size: 24px;
+  }
+  
+  h2 {
+    color: #333;
     font-weight: bold;
-    color: #4CAF50;
-    animation: textZoom 1s ease-in-out;
-}
-
-@keyframes textZoom {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#start-btn, #listen-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    margin-bottom: 20px;
+  }
+  
+  .container-fluid {
+    display: flex;
+  }
+  
+  .content {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Left Navigation Bar Styling */
+  .sidebar {
+    height: 100vh;
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #1a202c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-y: auto;
+  }
+  
+  .sidebar .nav {
+    padding-left: 0;
+  }
+  
+  .sidebar .nav-link {
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  .sidebar .nav-item {
+    list-style: none; /* Remove bullet points */
+  }
+  
+  .sidebar .nav-link.active,
+  .sidebar .nav-link:hover {
+    background-color: #3fc1c9;
+    color: white;
+  }
+  
+  /* Ensure content is not hidden behind sidebar */
+  main {
+    margin-left: 220px; /* Adjust to the width of the sidebar */
+  }
+  
+  
+  /* Main Dashboard Cards */
+  .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+  }
+  
+  .card {
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resume-card {
+    grid-column: span 1;
+  }
+  
+  .progress-card {
+    grid-column: span 1;
+  }
+  
+  .streak-card {
+    grid-column: span 1;
+  }
+  
+  /* Progress Bar */
+  .progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    background-color: #3fc1c9;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Streak Grid */
+  .streak-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 25px);
+    grid-gap: 5px;
+    margin-top: 20px;
+  }
+  
+  .streak-box {
+    width: 25px;
+    height: 25px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .streak-box.active {
+    background-color: #3fc1c9;
+  }
+  
+  .exercise-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0;
+  }
+  
+  .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      flex: 1 0 30%; /* Allows cards to take up 30% of the row space */
+      transition: transform 0.2s;
+      cursor: pointer;
+  }
+  
+  .card:hover {
+      transform: scale(1.05); /* Slightly enlarge card on hover */
+  }
+  
+  .card h4 {
+      margin-top: 0;
+      color: #333;
+  }
+  
+  .card p {
+      color: #555;
+  }
+  
+  /* Exercises cards on home*/
+  .exercise-cards {
+    /* display: flex; */
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
+    margin: 20px 0;
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    /* flex: 1 0 30%;  */
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: scale(1.02); /* Slightly enlarge card on hover */
+  }
+  
+  .card h4 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .card p {
+    color: #555;
+  }
+  
+  
+  /* Buttons */
+  .primary-btn {
+    background-color: #3fc1c9;
     color: white;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    margin: 10px;
-}
-
-#start-btn:hover, #listen-btn:hover {
-    background-color: #45a049;
-}
-
-#result, #final-score {
+    transition: background 0.3s ease;
+  }
+  
+  .primary-btn:hover {
+    background-color: #2e909a;
+  }
+  
+  /* Tongue Twister Exercise Styling */
+  .tongue-twister {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  
+  .speech-input {
     margin-top: 20px;
-    font-size: 18px;
-    color: #333;
-    animation: fadeIn 1s ease-in-out;
-}
+  }
+  
+  .feedback-section {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  #user-speech {
+    color: #3fc1c9;
+  }
+  
+  #result-message {
+    color: #ff6b6b;
+  }
+  
+  .secondary-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .secondary-btn:hover {
+    background-color: #e55555;
+  }
+  
+  /* Center alignment for right-side content */
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    /* min-height: 100vh;  */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+  }
+  
+  
+  

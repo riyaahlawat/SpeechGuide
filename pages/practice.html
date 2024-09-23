@@ -1,23 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=1024">
-    <title>Speech Therapy - Tongue Twisters</title>
-    <link rel="stylesheet" href="../assets/css/stylespractice.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Speech Therapy - Tongue Twisters</h1>
-        <div id="prompt-container">
-            <p id="prompt">Press "Start" to begin!</p>
-        </div>
-        <button id="start-btn">Start</button>
-        <button id="listen-btn" style="display:none;">Listen</button>
-        <div id="result"></div>
-        <div id="final-score"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speech Therapy Dashboard</title>
+    <link href="../assets/css/stylespractice.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Left Fixed Navigation Bar -->
+        <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+          <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link active"
+                  aria-current="page"
+                  onclick="showContent('home')"
+                >
+                  Home
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showContent('exercise1')">
+                  Tongue Twister
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showContent('exercise2')">
+                  Sentence Practice
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showContent('exercise3')">
+                  Word Pronunciation
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showContent('exercise4')">
+                  Number Pronunciation
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" onclick="showContent('exercise5')">
+                  Paragraph Reading
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Right Content Area -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <!-- Home Section -->
+          <div id="home" class="content">
+            <h2>Welcome, User!</h2>
+            <p>Let’s continue improving your speech!</p>
+
+            <div class="mt-4 dashboard-cards">
+              <div class="card resume-card">
+                <h4>Resume Exercises</h4>
+                <button class="btn primary-btn">Resume Last Exercise</button>
+              </div>
+
+              <div class="card progress-card">
+                <h4>Your Progress</h4>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" style="width: 60%">
+                    60% Complete
+                  </div>
+                </div>
+              </div>
+
+              <div class="card streak-card">
+                <h4>Your Streak</h4>
+                <div class="streak-grid">
+                  <div class="streak-box active"></div>
+                  <div class="streak-box active"></div>
+                  <div class="streak-box"></div>
+                  <div class="streak-box"></div>
+                  <div class="streak-box active"></div>
+                  <div class="streak-box"></div>
+                  <div class="streak-box active"></div>
+                  <div class="streak-box"></div>
+                  <div class="streak-box active"></div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Explore Exercises:</h3>
+            <div class="exercise-cards">
+              <div class="card" onclick="showSection('exercise1')">
+                <h4>Tongue Twister Challenge</h4>
+                <p>
+                  Improve your diction and pronunciation with fun tongue
+                  twisters.
+                </p>
+              </div>
+              <div class="card" onclick="showSection('exercise2')">
+                <h4>Sentence Practice</h4>
+                <p>Practice reading and pronouncing sentences clearly.</p>
+              </div>
+              <div class="card" onclick="showSection('exercise3')">
+                <h4>Word Pronunciation</h4>
+                <p>Focus on pronouncing individual words accurately.</p>
+              </div>
+              <div class="card" onclick="showSection('exercise4')">
+                <h4>Number Pronunciation</h4>
+                <p>Say a series of numbers to improve your pronunciation.</p>
+              </div>
+              <div class="card" onclick="showSection('exercise5')">
+                <h4>Paragraph Reading</h4>
+                <p>Read a paragraph aloud to enhance fluency.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Exercise Sections -->
+          <!-- Exercise 1: Speech Exercise -->
+          <div id="exercise1" class="content" style="display: none">
+            <h2>Exercise 1: Tongue Twister Challenge</h2>
+
+            <!-- Display Tongue Twister -->
+            <p class="tongue-twister">"She sells seashells by the seashore."</p>
+
+            <!-- Listen Button -->
+            <button class="btn primary-btn" onclick="playTwister()">
+              Listen
+            </button>
+
+            <!-- Speech Input Button -->
+            <div class="speech-input">
+              <p>Try to say the sentence aloud:</p>
+              <button
+                class="btn secondary-btn"
+                onclick="startSpeechRecognition()"
+              >
+                Start Speaking
+              </button>
+            </div>
+
+            <!-- Feedback Area -->
+            <div id="feedback" class="feedback-section">
+              <p id="user-speech"></p>
+              <p id="result-message"></p>
+            </div>
+          </div>
+
+          <!-- Exercise 2: Sentence Practice -->
+          <div id="exercise2" class="content" style="display: none">
+            <h2>Exercise 2: Sentence Practice</h2>
+            <p class="tongue-twister">
+              "The quick brown fox jumps over the lazy dog."
+            </p>
+            <button class="btn primary-btn" onclick="playTwister2()">
+              Listen
+            </button>
+            <div class="speech-input">
+              <p>Try to say the sentence aloud:</p>
+              <button
+                class="btn secondary-btn"
+                onclick="startSpeechRecognition2()"
+              >
+                Start Speaking
+              </button>
+            </div>
+            <div id="feedback2" class="feedback-section">
+              <p id="user-speech2"></p>
+              <p id="result-message2"></p>
+            </div>
+          </div>
+
+          <!-- Exercise 3: Word Pronunciation -->
+          <div id="exercise3" class="content" style="display: none">
+            <h2>Exercise 3: Word Pronunciation</h2>
+            <p class="tongue-twister">"Supercalifragilisticexpialidocious"</p>
+            <button class="btn primary-btn" onclick="playTwister3()">
+              Listen
+            </button>
+            <div class="speech-input">
+              <p>Try to say the word aloud:</p>
+              <button
+                class="btn secondary-btn"
+                onclick="startSpeechRecognition3()"
+              >
+                Start Speaking
+              </button>
+            </div>
+            <div id="feedback3" class="feedback-section">
+              <p id="user-speech3"></p>
+              <p id="result-message3"></p>
+            </div>
+          </div>
+
+          <!-- Exercise 4: Number Pronunciation -->
+          <div id="exercise4" class="content" style="display: none">
+            <h2>Exercise 4: Number Pronunciation</h2>
+            <p class="tongue-twister">
+              "Eight, Thirty-five, Two hundred, Forty-one"
+            </p>
+            <button class="btn primary-btn" onclick="playTwister4()">
+              Listen
+            </button>
+            <div class="speech-input">
+              <p>Try to say the numbers aloud:</p>
+              <button
+                class="btn secondary-btn"
+                onclick="startSpeechRecognition4()"
+              >
+                Start Speaking
+              </button>
+            </div>
+            <div id="feedback4" class="feedback-section">
+              <p id="user-speech4"></p>
+              <p id="result-message4"></p>
+            </div>
+          </div>
+
+          <!-- Exercise 5: Paragraph Reading -->
+          <div id="exercise5" class="content" style="display: none">
+            <h2>Exercise 5: Paragraph Reading</h2>
+            <p class="tongue-twister">
+              "Once upon a time, in a land far, far away, there lived a young
+              prince who loved to explore the enchanted forest. Every day, he
+              would venture into the woods, discovering new wonders and
+              befriending the magical creatures that lived there."
+            </p>
+            <button class="btn primary-btn" onclick="playTwister5()">
+              Listen
+            </button>
+            <div class="speech-input">
+              <p>Try to read the paragraph aloud:</p>
+              <button
+                class="btn secondary-btn"
+                onclick="startSpeechRecognition5()"
+              >
+                Start Speaking
+              </button>
+            </div>
+            <div id="feedback5" class="feedback-section">
+              <p id="user-speech5"></p>
+              <p id="result-message5"></p>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
     <script src="../assets/js/scriptpractice.js"></script>
-</body>
+  </body>
 </html>
