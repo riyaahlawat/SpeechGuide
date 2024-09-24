@@ -1,15 +1,8 @@
 body {
     font-family: poppins-bold;
-  }
+}
   
   /* home */
-  
-  .goodmorning {
-    background-color: rgb(243, 255, 131);
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
   
   .create-btn {
     background-color: #007bff;
@@ -66,7 +59,7 @@ body {
   }
   
   .table-heading {
-    background-color: aliceblue;
+    background-color: rgb(56, 115, 166);
     padding: 10px;
     border-radius: 5px;
     margin: 20px 20px;
@@ -77,7 +70,7 @@ body {
   }
   
   .documentation h3 {
-    background-color: aliceblue;
+    background-color: #3873a6;
     padding: 10px;
     border-radius: 5px;
   }
@@ -158,12 +151,15 @@ body {
   }
   
   .supervisor {
-    background-color: aliceblue;
+    background-color: rgb(56, 115, 166);
+    color: white;
+    border-radius: 20px;
     padding: 10px;
   }
   
   .open, .closed {
-    background-color: aliceblue;
+    background-color: rgb(56, 115, 166);
+    color: white;
     padding: 10px;
     margin: 10px;
   }
@@ -278,3 +274,27 @@ body {
   exercises {
     padding: 20px;
   }
+
+/* Improved Gradient backgrounds for the specific greeting element */
+.morning-greeting {
+  background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%); /* Soft pink and blue for a fresh morning */
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.afternoon-greeting {
+  background: linear-gradient(135deg, #FFAFBD 0%, #ffc3a0 100%); /* Warm pinks and oranges for a sunny afternoon */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.evening-greeting {
+  background: linear-gradient(135deg, #141E30 0%, #243B55 100%); /* Dark blues for a peaceful evening */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+

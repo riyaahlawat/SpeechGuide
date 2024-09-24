@@ -132,3 +132,26 @@ function toggleChat() {
     }
 }
 
+function updateGreeting() {
+    const currentHour = new Date().getHours();
+    const greetingElement = document.getElementById("greeting");
+
+    // Remove all time-related classes
+    greetingElement.classList.remove("morning-greeting", "afternoon-greeting", "evening-greeting");
+    if (currentHour >= 5 && currentHour < 12) {
+        // Morning
+        greetingElement.innerText = "Good Morning, Doc! Have a nice day ahead! :)";
+        greetingElement.classList.add("morning-greeting");
+    } else if (currentHour >= 12 && currentHour < 17) {
+        // Afternoon
+        greetingElement.innerText = "Good Afternoon, Doc! Hope your day is going well!";
+        greetingElement.classList.add("afternoon-greeting");
+    } else {
+        // Evening
+        greetingElement.innerText = "Good Evening, Doc! Relax and enjoy your evening!";
+        greetingElement.classList.add("evening-greeting");
+    }
+}
+
+// Update the greeting when the page loads
+updateGreeting();
