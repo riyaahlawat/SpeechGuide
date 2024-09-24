@@ -1,0 +1,82 @@
+/* General Schedule Container Styling */
+.schedule-container {
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f0f7ff; /* Light blue background */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a73e8; /* Google Blue */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Calendar Container Styling */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #e3f2fd; /* Light blue box around the calendar */
+    border-radius: 8px;
+    border: 1px solid #90caf9; /* Soft blue border */
+}
+
+/* Schedule List Title Styling */
+.schedule-list h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0d47a1; /* Deep Blue */
+}
+
+/* Session Card Styling */
+.session-card {
+    background-color: #e3f2fd; /* Light Blue Background */
+    border: 1px solid #64b5f6; /* Medium Blue Border */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+    color: #0d47a1; /* Text Color */
+}
+
+.session-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: #bbdefb; /* Darker blue on hover */
+}
+
+/* Session Title Styling */
+.session-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1565c0; /* Slightly darker blue */
+}
+
+/* Session Details Text Styling */
+.session-card p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #0d47a1;
+}
+
+/* Button or Link Styling if needed */
+.schedule-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-button:hover {
+    background-color: #155bb5;
+}

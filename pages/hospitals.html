@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Package</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        .hospital-table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .hospital-table th, .hospital-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        .hospital-table th {
+            background-color: #003366;
+            color: white;
+        }
+        .hospital-table td {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Choose Your Package</h2>
+    <div id="map"></div>
+    
+    <h3>Available Hospitals and Therapists</h3>
+    <table class="hospital-table">
+        <thead>
+            <tr>
+                <th>Hospital</th>
+                <th>Address</th>
+                <th>Therapist</th>
+                <th>Expertise</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Blue Valley Hospital</td>
+                <td>123 Blue St, City</td>
+                <td>Dr. John Doe</td>
+                <td>Speech Therapy</td>
+            </tr>
+            <tr>
+                <td>Sunnydale Clinic</td>
+                <td>456 Sunshine Ave, City</td>
+                <td>Dr. Jane Smith</td>
+                <td>Language Disorders</td>
+            </tr>
+            <tr>
+                <td>Riverfront Health Center</td>
+                <td>789 River Rd, City</td>
+                <td>Dr. Emily Brown</td>
+                <td>Stuttering Treatment</td>
+            </tr>
+            <tr>
+                <td>Oakwood Medical</td>
+                <td>101 Oak St, City</td>
+                <td>Dr. Alice Green</td>
+                <td>Voice Therapy</td>
+            </tr>
+            <tr>
+                <td>Skyline Hospital</td>
+                <td>111 Skyline Blvd, City</td>
+                <td>Dr. William Black</td>
+                <td>Articulation Therapy</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set its view to the initial coordinates (latitude, longitude)
+        var map = L.map('map').setView([51.505, -0.09], 13); // Centered at default coordinates
+
+        // Add OpenStreetMap tiles to the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers for hospitals (replace coordinates with actual locations)
+        var hospitals = [
+            { name: "Blue Valley Hospital", lat: 51.505, lon: -0.09 },
+            { name: "Sunnydale Clinic", lat: 51.515, lon: -0.1 },
+            { name: "Riverfront Health Center", lat: 51.52, lon: -0.08 },
+            { name: "Oakwood Medical", lat: 51.49, lon: -0.07 },
+            { name: "Skyline Hospital", lat: 51.495, lon: -0.06 }
+        ];
+
+        // Loop through the hospital data and add a marker for each hospital
+        hospitals.forEach(function(hospital) {
+            L.marker([hospital.lat, hospital.lon])
+                .addTo(map)
+                .bindPopup(`<b>${hospital.name}</b><br>${hospital.lat}, ${hospital.lon}`)
+                .openPopup();
+        });
+    </script>
+</body>
+</html>
