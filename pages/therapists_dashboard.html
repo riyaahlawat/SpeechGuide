@@ -8,6 +8,7 @@
     <title>SpeechGuide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../assets/css/therapists_styles.css">
+    <!-- <link href="../assets/css/stylespractice.css" rel="stylesheet" /> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -23,7 +24,7 @@
         <div class="row" id="home">
             <!-- Sidebar -->
             <div class="col-3 sidebar">
-                <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="height: 100vh;">
+                <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="height: 100vh">
                     <a href="/"
                         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                         <span class="fs-4">SpeechGuide</span>
@@ -65,7 +66,8 @@
                         <a href="#"
                             class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="../assets/images/therapist/patient.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                            <img src="../assets/images/therapist/patient.png" alt="" width="32" height="32"
+                                class="rounded-circle me-2">
                             <strong>Lalit Kasana</strong>
                         </a>
                         <ul class="dropdown-menu text-small shadow">
@@ -81,10 +83,9 @@
                 </div>
             </div>
 
-
             <!-- Right Part -->
             <div class="col-9 content">
-                <h2 class="goodmorning">Hello, Doctor! Good Morning! :)</h2>
+                <h2 id="greeting" class="goodmorning greeting"></h2>
                 <hr>
                 <home>
                     <!-- Button to open modal -->
@@ -132,7 +133,7 @@
                     </div>
 
                     <!-- Table -->
-                    <h3 class="table-heading">Scheduled Sessions for Today (10-Sept-2024)</h3>
+                    <h3 class="table-heading" style="color: white">Scheduled Sessions for Today (10-Sept-2024)</h3>
                     <table class="table tabular mt-4 ">
                         <thead>
                             <tr>
@@ -166,7 +167,7 @@
                     <hr>
 
                     <!-- Calendar -->
-                    <h3 class="table-heading">Calendar</h3>
+                    <h3 class="table-heading" style="color: white">Calendar</h3>
                     <div class="calendar">
                         <iframe
                             src="https://calendar.google.com/calendar/embed?src=rahlawat903%40gmail.com&ctz=Asia%2FKolkata"
@@ -176,7 +177,7 @@
 
                     <!-- Notes -->
                     <div class="container mt-5 documentation">
-                        <h3 class="fw-bold">Recent Documentation</h3>
+                        <h3 class="fw-bold" style="color: white">Recent Documentation</h3>
                         <!-- Incomplete Notes -->
                         <p>
                             <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
@@ -231,7 +232,7 @@
                     <hr>
 
                     <!-- Insights -->
-                    <h3 class="table-heading">Insights</h3>
+                    <h3 class="table-heading" style="color: white">Insights</h3>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="info-box">
@@ -255,7 +256,7 @@
                     <hr>
 
                     <!-- Reviews Section -->
-                    <h3 class="table-heading">Recent Reviews</h3>
+                    <h3 class="table-heading" style="color: white">Recent Reviews</h3>
                     <div class="reviews-section">
                         <div class="d-flex align-items-center">
                             <button class="btn btn-primary me-2" id="scrollLeft"><i
@@ -295,7 +296,7 @@
                 </home>
 
                 <patients>
-                    <div class="container mt-4">
+                    <div class="container mt-4" style="background-color: rgb(56, 115, 166);">
                         <div class="accordion" id="patientsAccordion">
                             <!-- Active Patients Section -->
                             <div class="card">
@@ -317,77 +318,92 @@
                                                     <th>S.No.</th>
                                                     <th>Name</th>
                                                     <th>Patient ID</th>
+                                                    <th>Package</th>
+                                                    <th>Sessions Left</th>
                                                     <th>Photo</th>
                                                 </tr>
+                                            </thead>
+                                            <tbody id="active-patients">
                                                 <tr>
                                                     <td>1</td>
-                                                    <td><a href="./example_patient.html" target="_blank">Aaravi
-                                                            Sharma</a></td>
+                                                    <td><a href="#">Aaravi Sharma</a></td>
                                                     <td>P001</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Patient Picture" width="50"
-                                                            height="50"></td>
+                                                    <td>Comprehensive Therapy Package</td>
+                                                    <td>6/10</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Aaravi Sharma" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
-                                                    <td><a href="./example_patient.html" target="_blank">Vihaani
-                                                            Patel</a></td>
+                                                    <td>Vihaani Patel</td>
                                                     <td>P002</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Vihaan Patel" width="50"
-                                                            height="50"></td>
+                                                    <td>Basic Speech Therapy Package</td>
+                                                    <td>4/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Vihaani Patel" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
-                                                    <td><a href="./example_patient.html" target="_blank">Aditi Singh</a>
-                                                    </td>
+                                                    <td>Aditi Singh</td>
                                                     <td>P003</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Aditya Singh" width="50"
-                                                            height="50"></td>
+                                                    <td>Advanced Speech Fluency Package</td>
+                                                    <td>5/8</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Aditi Singh" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>4</td>
                                                     <td>Arjun Reddy</td>
                                                     <td>P004</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Arjun Reddy" width="50"
-                                                            height="50"></td>
+                                                    <td>Singleton Package</td>
+                                                    <td>1/1</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Arjun Reddy" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>5</td>
                                                     <td>Vivaan Gupta</td>
                                                     <td>P005</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Vivaan Gupta" width="50"
-                                                            height="50"></td>
+                                                    <td>Basic Speech Therapy Package</td>
+                                                    <td>2/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Vivaan Gupta" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>6</td>
                                                     <td>Rajesh Kumar</td>
                                                     <td>P006</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Rajesh Kumar" width="50"
-                                                            height="50"></td>
+                                                    <td>Comprehensive Therapy Package</td>
+                                                    <td>8/10</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Rajesh Kumar" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>7</td>
                                                     <td>Arnav Bhatia</td>
                                                     <td>P007</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Arnav Bhatia" width="50"
-                                                            height="50"></td>
+                                                    <td>Advanced Speech Fluency Package</td>
+                                                    <td>3/8</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Arnav Bhatia" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>8</td>
                                                     <td>Dhruv Sinha</td>
                                                     <td>P010</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Dhruv Sinha" width="50"
-                                                            height="50"></td>
+                                                    <td>Basic Speech Therapy Package</td>
+                                                    <td>4/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Dhruv Sinha" width="50" height="50"></td>
                                                 </tr>
-                                            </thead>
-                                            <tbody id="active-patients">
-                                                <!-- Active patients will be listed here -->
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Patients with Warnings Section -->
+                            <!-- Patients with Withdrawal Cases -->
                             <div class="card">
                                 <div class="card-header" id="headingTwo">
                                     <h5 class="mb-0">
@@ -407,27 +423,36 @@
                                                     <th>S.No.</th>
                                                     <th>Name</th>
                                                     <th>Patient ID</th>
+                                                    <th>Package</th>
+                                                    <th>Sessions Left</th>
+                                                    <th>Rating</th>
                                                     <th>Photo</th>
                                                 </tr>
-                                                <tr></tr>
-                                                <td>1</td>
-                                                <td>Rohan Mehta</td>
-                                                <td>P008</td>
-                                                <td><img src="../assets/images/therapist/patient.png" alt="Rohan Mehta" width="50"
-                                                        height="50"></td>
+                                            </thead>
+                                            <tbody id="withdrawn-patients">
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Rohan Mehta</td>
+                                                    <td>P008</td>
+                                                    <td>Comprehensive Therapy Package</td>
+                                                    <td>6/10</td>
+                                                    <td>2/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Rohan Mehta" width="50" height="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
                                                     <td>Reyansh Desai</td>
                                                     <td>P009</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" alt="Reyansh Desai" width="50"
-                                                            height="50"></td>
+                                                    <td>Comprehensive Therapy Package</td>
+                                                    <td>3/10</td>
+                                                    <td>2/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            alt="Reyansh Desai" width="50" height="50"></td>
                                                 </tr>
-                                            </thead>
-                                            <tbody id="warn-patients">
-                                                <!-- Patients with warnings will be listed here -->
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
                             </div>
@@ -452,34 +477,46 @@
                                                     <th>S.No.</th>
                                                     <th>Name</th>
                                                     <th>Patient ID</th>
+                                                    <th>Package</th>
+                                                    <th>Sessions Left</th>
+                                                    <th>Rating</th>
                                                     <th>Photo</th>
                                                 </tr>
+                                            </thead>
+                                            <tbody id="closed-patients">
                                                 <tr>
                                                     <td>1</td>
                                                     <td>Ritu Choudhury</td>
                                                     <td>P011</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" class="img-thumbnail"
-                                                            width="50"></td>
+                                                    <td>Singleton Package</td>
+                                                    <td>0</td>
+                                                    <td>5/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            class="img-thumbnail" width="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
                                                     <td>Arvind Joshi</td>
                                                     <td>P012</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" class="img-thumbnail"
-                                                            width="50"></td>
+                                                    <td>Basic Therapy Package</td>
+                                                    <td>0</td>
+                                                    <td>4/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            class="img-thumbnail" width="50"></td>
                                                 </tr>
                                                 <tr>
                                                     <td>3</td>
                                                     <td>Rina Patel</td>
                                                     <td>P013</td>
-                                                    <td><img src="../assets/images/therapist/patient.png" class="img-thumbnail"
-                                                            width="50"></td>
+                                                    <td>Advanced Therapy Package</td>
+                                                    <td>0</td>
+                                                    <td>3/5</td>
+                                                    <td><img src="../assets/images/therapist/patient.png"
+                                                            class="img-thumbnail" width="50"></td>
                                                 </tr>
-                                            </thead>
-                                            <tbody id="closed-patients">
-                                                <!-- Closed patients will be listed here -->
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
                             </div>
@@ -492,8 +529,8 @@
                         <div class="supervisor row">
                             <!-- Supervisor Profile -->
                             <div class="col-md-3">
-                                <img src="../assets/images/therapist/patient.png" alt="Supervisor Photo" class="img-fluid rounded-circle"
-                                    width="100" height="100">
+                                <img src="../assets/images/therapist/patient.png" alt="Supervisor Photo"
+                                    class="img-fluid rounded-circle" width="100" height="100">
                             </div>
                             <div class="col-md-9">
                                 <h3>Dr. Ramesh Kumar</h3>
@@ -663,11 +700,11 @@
                     <button class="chat-button" onclick="toggleChat()">Chat<br> Now!</button>
                     <div id="chat-window" class="chat-window">
                         <div class="chat-header">
-                            <span>Chat with Aaravi Sharma.</span>
+                            <span>Chat with your supervisor, Dr. Ramesh.</span>
                             <button onclick="toggleChat()" class="close-chat">&times;</button>
                         </div>
                         <div class="chat-body">
-                            <p>"Hey. Type your message below to reach the associated patient."</p>
+                            <p>"Hey. Type your message below to reach the associated person."</p>
                         </div>
                         <div class="chat-footer">
                             <input type="text" placeholder="Type your message..." disabled />
@@ -679,13 +716,16 @@
 
                 <exercises>
                     <section class="container mt-5">
-                        <h2 class="text-center mb-5">Speech Therapy Exercises</h2>
+                        <h2 class="text-center mb-5"
+                            style="color:white; background-color:rgb(56, 115, 166); padding: 22px;">Speech Therapy
+                            Exercises</h2>
 
                         <!-- Row for Displaying an Image -->
                         <div class="row mb-4">
                             <div class="col-md-6 mx-auto text-center">
-                                <h4>Speech Therapy Techniques</h4>
-                                <img src="../assets/images/therapist/speech.jpg" alt="Speech Therapy Image" class="img-fluid">
+                                <!-- <h4 style="color: white;">Speech Therapy Techniques</h4> -->
+                                <img src="../assets/images/therapist/speech.jpg" alt="Speech Therapy Image"
+                                    class="img-fluid">
                             </div>
                         </div>
 
@@ -695,121 +735,119 @@
                                 <div class="card shadow-sm">
                                     <div class="card-body">
                                         <h3 class="card-title">Tongue Twister Challenges</h3>
-                                        <p class="card-text">Try to pronounce tongue twisters quickly and clearly. Get
-                                            feedback on your speed and accuracy.</p>
-                                        <button class="btn btn-primary">Start Tongue Twister</button>
+                                        <p class="card-text">Challenge yourself with tongue twisters to improve your
+                                            clarity and speed in pronunciation.</p>
+                                        <!-- <button class="btn btn-primary">Start Tongue Twister</button> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Phoneme Practice -->
+                        <!-- Sentence Practice -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mx-auto">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Sentence Practice</h3>
+                                        <p class="card-text">Practice sentences to enhance your articulation skills.</p>
+                                        <!-- <button class="btn btn-primary">Practice Sentence</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Word Pronunciation -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mx-auto">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Word Pronunciation</h3>
+                                        <p class="card-text">Work on differentiating similar-sounding words to refine
+                                            your pronunciation accuracy.</p>
+                                        <!-- <button class="btn btn-primary">Start Word Pronunciation</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Number Pronunciation -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mx-auto">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Number Pronunciation</h3>
+                                        <p class="card-text">Practice repeating numbers to improve your speech fluency.
+                                        </p>
+                                        <!-- <button class="btn btn-primary">Play Numbers</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paragraph Reading -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mx-auto">
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Paragraph Reading</h3>
+                                        <p class="card-text">Practice reading paragraphs for better fluency.</p>
+                                        <!-- <button class="btn btn-primary">Start Paragraph Reading</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Building in Progress -->
                         <div class="row mb-4">
                             <div class="col-md-6 mx-auto">
                                 <div class="card shadow-sm">
                                     <div class="card-body">
                                         <h3 class="card-title">Phoneme Practice</h3>
-                                        <p class="card-text">Select a phoneme to practice. Focus on sounds like "s,"
-                                            "sh," or "r" to improve articulation.</p>
-                                        <label for="phonemeSelect" class="form-label">Choose a phoneme:</label>
-                                        <select class="form-select mb-3" id="phonemeSelect">
-                                            <option value="s">S</option>
-                                            <option value="sh">SH</option>
-                                            <option value="r">R</option>
-                                        </select>
-                                        <button class="btn btn-primary">Practice Phoneme</button>
+                                        <p class="card-text">Practice differentiating phonemes to improve sound clarity.
+                                            <strong>Building in Progress...</strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Minimal Pairs -->
                         <div class="row mb-4">
                             <div class="col-md-6 mx-auto">
                                 <div class="card shadow-sm">
                                     <div class="card-body">
-                                        <h3 class="card-title">Minimal Pairs</h3>
-                                        <p class="card-text">Differentiate between similar-sounding words like "bat" and
-                                            "pat" to improve articulation.</p>
-                                        <button class="btn btn-primary">Start Minimal Pair Exercise</button>
+                                        <h3 class="card-title">Accent Training</h3>
+                                        <p class="card-text">Enhance your accent and pronunciation skills.
+                                            <strong>Building in Progress...</strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Sentence Repetition -->
                         <div class="row mb-4">
                             <div class="col-md-6 mx-auto">
                                 <div class="card shadow-sm">
                                     <div class="card-body">
-                                        <h3 class="card-title">Sentence Repetition</h3>
-                                        <p class="card-text">Repeat sentences to improve speech fluency and articulation
-                                            accuracy.</p>
-                                        <button class="btn btn-primary">Play Sentence</button>
+                                        <h3 class="card-title">Conversation Practice</h3>
+                                        <p class="card-text">Engage in conversations to improve your speech fluency.
+                                            <strong>Building in Progress...</strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Breathing and Pausing Practice -->
-                        <div class="row mb-4">
-                            <div class="col-md-6 mx-auto">
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Breathing and Pausing Practice</h3>
-                                        <p class="card-text">Practice controlled breathing and pausing during speech for
-                                            better fluency.</p>
-                                        <button class="btn btn-primary">Start Breathing Practice</button>
-                                    </div>
-                                </div>
+                        <!-- Button to visit the Speech Dashboard -->
+                        <div class="row mt-5">
+                            <div class="col-md-12 text-center">
+                                <a class="btn btn-primary"
+                                    href="./practice.html" target="_blank">Visit Speech
+                                    Dashboard</a>
                             </div>
                         </div>
 
-                        <!-- Story Completion -->
-                        <div class="row mb-4">
-                            <div class="col-md-6 mx-auto">
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Story Completion</h3>
-                                        <p class="card-text">Complete a story by speaking aloud. This helps improve
-                                            fluency and creativity in speech.</p>
-                                        <button class="btn btn-primary">Start Story</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Pitch and Tone Modulation -->
-                        <div class="row mb-4">
-                            <div class="col-md-6 mx-auto">
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Pitch and Tone Modulation</h3>
-                                        <p class="card-text">Practice varying your pitch and tone to match different
-                                            emotions like happy, sad, or excited.</p>
-                                        <button class="btn btn-primary">Start Pitch Practice</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Syllable Counting -->
-                        <div class="row mb-4">
-                            <div class="col-md-6 mx-auto">
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Syllable Counting</h3>
-                                        <p class="card-text">Count the syllables in words or phrases to improve speech
-                                            rhythm.</p>
-                                        <button class="btn btn-primary">Start Syllable Counting</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </section>
                     <div class="text-center mt-5" style="display: flex; flex-direction: column;">
-                        <button class="btn btn-success mb-2">Request for a new exercise</button>
-                        <button class="btn btn-warning">Request to modify / remove an exisiting one</button>
+                        <button class="btn btn-primary mb-2">Request for a new exercise</button>
+                        <button class="btn btn-primary">Request to modify / remove an exisiting one</button>
                     </div>
                 </exercises>
 
@@ -839,7 +877,7 @@
                                         <h3 class="card-title">Progress Reports</h3>
                                         <p class="card-text">Track the progress of patients with detailed reports.</p>
                                         <button class="btn btn-primary mb-2">View Progress Reports</button>
-                                        <button class="btn btn-secondary">Upload New Report</button>
+                                        <button class="btn btn-secondary">Create New Report</button>
                                     </div>
                                 </div>
                             </div>
@@ -860,8 +898,8 @@
 
                         <!-- Section for Upload and Send Actions -->
                         <div class="text-center mt-5" style="display: flex; flex-direction: column;">
-                            <button class="btn btn-success mb-2">Upload Document</button>
-                            <button class="btn btn-warning">Send Document</button>
+                            <button class="btn btn-primary mb-2">Upload Document</button>
+                            <button class="btn btn-primary">Send Document</button>
                         </div>
                     </section>
 
