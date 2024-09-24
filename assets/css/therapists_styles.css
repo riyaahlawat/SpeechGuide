@@ -1,6 +1,6 @@
 body {
     font-family: poppins-bold;
-  }
+}
   
   /* home */
   
@@ -70,7 +70,7 @@ body {
   }
   
   .documentation h3 {
-    background-color: rgb(56, 115, 166);
+    background-color: #3873a6;
     padding: 10px;
     border-radius: 5px;
   }
