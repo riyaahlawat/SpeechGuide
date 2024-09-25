@@ -1,0 +1,98 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333; /* Dark grey text for readability */
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #021428; /* Primary blue color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #02264c; /* Blue header */
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for alternate rows */
+}
+
+table a {
+    color: #abc3db;
+    text-decoration: none;
+}
+
+table a:hover {
+    text-decoration: underline;
+}
+
+/* Section Heading Styles */
+section h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #06213e; /* Blue section headings */
+    font-size: 2rem;
+}
+
+/* Package List Styles */
+ul {
+    list-style-type: none;
+    width: 60%;
+    margin: 20px auto;
+}
+
+ul li {
+    background-color: #e6f2ff; /* Light blue background for packages */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #032448;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #b6d7f9; /* Footer matches header */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}

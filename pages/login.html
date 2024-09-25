@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./../assets/css/loginstyle.css">
+</head>
+<body>
+    <!-- Top Navigation Buttons -->
+    <header class="top-nav">
+        <button class="nav-btn active" onclick="toggleForm('login')">Sign In</button>
+        <button class="nav-btn" onclick="toggleForm('register')">Sign Up</button>
+    </header>
+
+    <div class="form-box">
+        <!-- Login Container -->
+        <div class="login-container" id="login">
+            <div class="top">
+                <span>Don't have an account? <a href="#" onclick="toggleForm('register')">Sign Up</a></span>
+                <header>Login</header>
+            </div>
+            <form id="loginForm" onsubmit="submitForm(event)">
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Username or Email" name="usernameOrEmail" required>
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password" name="password" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In">
+                </div>
+            </form>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="login-check">
+                    <label for="login-check">Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="forgotpassword.html">Forgot password?</a></label>
+                </div>
+            </div>
+            <!-- Back Button -->
+            <div class="back-button">
+                <button onclick="goBack()">Back</button>
+            </div>
+        </div>
+
+        <!-- Register Container -->
+        <div class="register-container" id="register">
+            <div class="top">
+                <span>Have an account? <a href="#" onclick="toggleForm('login')">Login</a></span>
+                <header>Sign Up</header>
+            </div>
+            <form id="registerForm" onsubmit="submitForm(event, 'register')">
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname" name="firstname" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname" name="lastname" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder="Email" name="email" required>
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Password" name="password" required>
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+            </form>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check">Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./../assets/js/loginscript.js"></script>
+</body>
+</html>
