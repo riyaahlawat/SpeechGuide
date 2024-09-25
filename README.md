@@ -2,6 +2,8 @@
 
 SpeechGuide is a platform built for SIH 2024, designed to offer a comprehensive speech therapy experience. It connects patients with therapists and therapists with their supervisors. The platform provides features like personalized therapy plans, daily speech exercises, progress tracking, and seamless communication between all involved parties.
 
+You can try out the platform [here](https://muskanny.github.io/SpeechGuide/).
+
 ## Features
 
 1. **Landing Page**: 
