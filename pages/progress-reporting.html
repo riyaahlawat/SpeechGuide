@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Reporting</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="js/progress-reporting.js"></script>
+
+</head>
+<body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-content">
+        <h2>Supervisor Dashboard</h2>
+        <ul>
+          <li><a href="supervisor-home.html">Home</a></li>
+          <li><a href="case-management.html">Case Management</a></li>
+          <li><a href="therapy-plan.html">Therapy Plan Management</a></li>
+          <li><a href="progress-reporting.html">Progress Reporting</a></li>
+          <li><a href="clinical-rating.html">Clinical Rating</a></li>
+          <li><a href="reports-analytics.html">Reports and Analytics</a></li>
+        </ul>
+        </div>
+        <div class="profile-section">
+            <img src="../assets/images/Supervisor/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <p class="profile-name">Dr. Aman Sharma</p>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <h3>Progress Reporting</h3>
+
+       <!-- Doctor's Dropdown -->
+<div class="dropdown-container">
+    <label for="doctor-select">Select Therapist:</label>
+    <select id="doctor-select" onchange="updateTherapistData()">
+      <option value="default" disabled selected>Select a Therapist</option>
+      <option value="therapist1">Dr. Amit</option>
+      <option value="therapist2">Dr. Riya</option>
+      <option value="therapist3">Dr. Rakesh</option>
+    </select>
+  </div>
+  
+        <div class="progress-grid">
+          <div class="card">
+            <h4>Sessions Completed</h4>
+            <p id="completed-sessions">0</p>
+            <button onclick="viewReport()">View Report</button>
+          </div>
+          <div class="card">
+            <h4>Sessions Pending</h4>
+            <p id="pending-sessions">0</p>
+            <button onclick="submitReport()">Submit Report</button>
+          </div>
+          <div class="card">
+            <h4>Total Therapy Hours</h4>
+            <p id="therapy-hours">0 hours</p>
+          </div>
+          <div class="card">
+            <h4>Completion Rate</h4>
+            <p id="completion-rate">0%</p>
+          </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <section class="recent-activity">
+          <h3>Recent Activity</h3>
+          <ul id="recent-activity-list">
+          </ul>
+        </section>
+
+        <!-- Actionable Reports Section -->
+        <section class="actionable-reports">
+          <h3>Pending Tasks</h3>
+          <ul id="pending-reports-list">
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="..assets/js/progress-reporting.js"></script>
+</body>
+</html>

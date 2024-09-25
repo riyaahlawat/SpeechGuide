@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Management</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+     <!-- Sidebar -->
+     <aside class="sidebar">
+        <div class="sidebar-content">
+        <h2>Supervisor Dashboard</h2>
+        <ul>
+          <li><a href="supervisor-home.html">Home</a></li>
+          <li><a href="case-management.html">Case Management</a></li>
+          <li><a href="therapy-plan.html">Therapy Plan Management</a></li>
+          <li><a href="progress-reporting.html">Progress Reporting</a></li>
+          <li><a href="clinical-rating.html">Clinical Rating</a></li>
+          <li><a href="reports-analytics.html">Reports and Analytics</a></li>
+        </ul>
+        </div>
+        <div class="profile-section">
+            <img src="../assets/images/Supervisor/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <p class="profile-name">Dr. Aman Sharma</p>
+        </div>
+      </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <section id="case-management">
+        <h3>Case Management</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Case ID</th>
+              <th>Patient Name</th>
+              <th>Therapist Assigned</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="case-list">
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
+  <script src="../assets/js/case-management.js"></script>
+</body>
+</html>

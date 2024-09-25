@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinical Rating</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-content">
+        <h2>Supervisor Dashboard</h2>
+        <ul>
+          <li><a href="supervisor-home.html">Home</a></li>
+          <li><a href="case-management.html">Case Management</a></li>
+          <li><a href="therapy-plan.html">Therapy Plan Management</a></li>
+          <li><a href="progress-reporting.html">Progress Reporting</a></li>
+          <li><a href="clinical-rating.html">Clinical Rating</a></li>
+          <li><a href="reports-analytics.html">Reports and Analytics</a></li>
+        </ul>
+        </div>
+        <div class="profile-section">
+            <img src="../assets/images/Supervisor/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <p class="profile-name">Dr. Aman Sharma</p>
+        </div>
+      </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h3>Clinical Rating</h3>
+      <div class="card">
+        <p>Rate the therapist based on the quality and effectiveness of their therapy sessions.</p>
+        
+        <!-- Therapist Selection Section -->
+        <h4>Select Therapist</h4>
+        <select id="doctor-select" name="therapist">
+          <option value="therapist1">Dr. Amit</option>
+          <option value="therapist2">Dr. Rakesh</option>
+          <option value="therapist3">Dr. Riya</option>
+        </select>
+        
+        <!-- Therapist Details Section -->
+        <div class="therapist-details" id="therapist-details">
+          <h4>Therapist Information</h4>
+          <strong>Average rating:</strong> <span id="average rating">4.2</span><br>
+          <strong>Completed Sessions:</strong> <span id="completed-sessions">8</span><br>
+          <strong>Pending Sessions:</strong> <span id="pending-sessions">2</span><br>
+          <strong>Therapy Hours:</strong> <span id="therapy-hours">12 hours</span><br>
+          <strong>Completion Rate:</strong> <span id="completion-rate">80%</span>
+        </div>
+
+        <!-- Clinical Rating Form -->
+        <h4>Rate This Therapist</h4>
+        <form id="rating-form">
+          <label for="rating">Rating (1-5):</label>
+          <input type="number" id="rating" name="rating" min="1" max="5" required>
+          <br>
+          <label for="comments">Comments:</label>
+          <textarea id="comments" name="comments" rows="4" placeholder="Provide detailed feedback"></textarea>
+          <br>
+          <button type="submit">Submit Rating</button>
+        </form>
+      </div>
+
+      <!-- Recent Activity Section -->
+      <div class="recent-activity card">
+        <h4>Recent Activity</h4>
+        <ul id="recent-activity-list">
+          <li>Session 8 completed on 15th September 2024</li>
+          <li>Session 7 completed on 12th September 2024</li>
+        </ul>
+      </div>
+
+      <!-- Pending Tasks -->
+      <div class="actionable-tasks card">
+        <h4>Pending Tasks</h4>
+        <ul id="pending-tasks-list">
+          <li>Submit progress report for Session 9 (Due: 20th September 2024)</li>
+          <li>Review feedback for Session 7</li>
+        </ul>
+      </div>
+
+      <!-- Rating Guide Section -->
+      <div class="card">
+        <h4>How to Rate Effectively</h4>
+        <p>When providing a rating, consider the following:</p>
+        <ul>
+          <li>The therapist's communication skills and engagement with the patient.</li>
+          <li>The therapist's ability to address and work through patient concerns.</li>
+          <li>The overall effectiveness of the therapy sessions and observed progress.</li>
+          <li>Timeliness and professionalism in delivering therapy sessions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="..assets/js/clinical-rating.js"></script>
+</body>
+</html>

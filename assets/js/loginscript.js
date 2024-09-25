@@ -45,7 +45,7 @@ function submitForm(event) {
     } else if (userRole === 'therapist') {
         window.location.href = "therapists_dashboard.html"; // Redirect to Therapist Dashboard
     } else if (userRole === 'supervisor') {
-        window.location.href = 'supervisor_dashboard.html'; // Redirect to Supervisor Dashboard
+        window.location.href = 'supervisor-home.html'; // Redirect to Supervisor Dashboard
     } else {
         // If no role is found, redirect to a default page or show an error
         window.location.href = 'error.html'; // Optional: error handling
