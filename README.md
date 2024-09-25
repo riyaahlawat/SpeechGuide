@@ -23,14 +23,6 @@ SpeechGuide is a platform built for SIH 2024, designed to offer a comprehensive 
 
 - Frontend: HTML, CSS, JavaScript
 
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/speechguide.git
-   
-2. Open index.html in your browser.
-
 ## Explore
 
 Currently, only the frontend is implemented. Feel free to explore the various features!
