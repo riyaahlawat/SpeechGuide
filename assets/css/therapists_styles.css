@@ -277,15 +277,17 @@ body {
 
 /* Improved Gradient backgrounds for the specific greeting element */
 .morning-greeting {
-  background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%); /* Soft pink and blue for a fresh morning */
-  color: #333;
+  background: linear-gradient(135deg, #ffe69c 0%, #fbff93 100%); /* Soft pink and blue for a fresh morning */
+  color: hwb(235 3% 53%);
   padding: 20px;
   border-radius: 10px;
+  border: 1px solid hwb(235 3% 53%);
 }
 
 .afternoon-greeting {
-  background: linear-gradient(135deg, #FFAFBD 0%, #ffc3a0 100%); /* Warm pinks and oranges for a sunny afternoon */
-  color: #fff;
+  background: linear-gradient(135deg, #fff0af 0%, #ffc3a0 100%); /* Warm pinks and oranges for a sunny afternoon */
+  color: hwb(235 3% 53%);
+  border: 1px solid hwb(235 3% 53%);
   padding: 20px;
   border-radius: 10px;
 }
@@ -295,6 +297,7 @@ body {
   color: #fff;
   padding: 20px;
   border-radius: 10px;
+  border: 1px solid white;
 }
 
 
