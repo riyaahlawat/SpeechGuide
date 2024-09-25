@@ -1,185 +1,374 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Learning Platform</title>
-    <link rel="stylesheet" href="landing_styles.css">
-    <script defer src="landing_scripts.js"></script>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Financial Learning Platform</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#goals">Goal Setting</a></li>
-                    <li><a href="#loans">Loans</a></li>
-                    <li><a href="#budgeting">Budgeting</a></li>
-                    <li><a href="#stocks">Stock Prediction</a></li>
-                    <li><a href="#insurance">Insurance Comparison</a></li>
-                    <li><a href="#resources">Learning Resources</a></li>
-                    <li><a href="#reviews">User Reviews</a></li>
-                </ul>
-                <div class="auth-buttons">
-                    <button class="login">Login</button>
-                    <button class="signup">Sign Up</button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section id="hero">
-        <div class="container">
-            <h2>Empower Your Financial Future</h2>
-            <p>Set goals, get personalized investment recommendations, and more.</p>
-            <a href="#goals" class="cta-button">Get Started</a>
-        </div>
-    </section>
-
-    <section id="goals" class="content-section">
-        <div class="container">
-            <h2>Goal Setting</h2>
-            <p>Set your financial goals and get personalized recommendations to achieve them.</p>
-        </div>
-    </section>
-
-    <section id="loans" class="content-section">
-        <div class="container">
-            <h2>Loan Management</h2>
-            <p>Select loan types, amounts, durations, and manage your loans efficiently.</p>
-        </div>
-    </section>
-
-    <section id="budgeting" class="content-section">
-        <div class="container">
-            <h2>Budgeting</h2>
-            <p>Create and manage monthly budgets to keep track of your spending.</p>
-        </div>
-    </section>
-
-    <section id="stocks" class="content-section">
-        <div class="container">
-            <h2>Stock Prediction</h2>
-            <p>Predict stock performance and make informed investment decisions.</p>
-        </div>
-    </section>
-
-    <section id="insurance" class="content-section">
-        <div class="container">
-            <h2>Insurance Comparison</h2>
-            <p>Compare insurance schemes and find the best options for you.</p>
-        </div>
-    </section>
-
-    <section id="resources" class="content-section">
-        <div class="container">
-            <h2>Learning Resources</h2>
-            <p>Access comprehensive learning resources to enhance your financial knowledge.</p>
-        </div>
-    </section>
-
-    <section id="reviews" class="content-section">
-        <div class="container">
-            <h2>User Reviews</h2>
-            <p>Read reviews from other users and share your own experiences.</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Financial Learning Platform. All rights reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>  -->
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="viewport" content="width=1024" />
-    <title>Speech Guide Platform</title>
-    <link rel="stylesheet" href="assets\css\index_styles.css" />
-    <script defer src="assets\js\index_scripts.js"></script>
-  </head>
-  <body>
-    <header class="header">
-      <!--<button class="menu-button" onclick="openNav()">☰</button>-->
-      <h1 style="text-align: left; padding-left: 50px">Speech Guide</h1>
-      <nav class="header-nav">
-        <ul class="header-nav-list">
-          <li><a href="pages\patients.html">Patient?</a></li>
-          <li><a href="pages\therapists_dashboard.html">Therapist?</a></li>
-          <li><a href="pages\supervisors.html">Supervisor?</a></li>
-        </ul>
-      </nav>
-    </header>
+<html lang="en" dir="ltr">
 
-    <section id="hero">
-      <div class="hero-text">
-        <h2 class="typing-text"></h2>
-      </div>
-      <div class="hero-image">
-        <img src="assets\images\index\landing_img2.png" alt="st_landing1" />
-      </div>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <title>SpeechGuide</title>
+  <link rel="stylesheet" href="assets/css/index_styles.css">
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-    <section class="info-section">
-      <div class="info-content">
-        <div class="info-text">
-          <h2>Your Personalized Speech Guide</h2>
-          <p>We're here to help you hold hands with your Speech Guides</p>
-        </div>
-        <div class="info-image">
-          <img src="assets\images\index\feature1.png" alt="Image 1" />
-        </div>
+<body>
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="#">SpeechGuide</a></div>
+      <ul class="menu">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="pages/login.html" onclick="storeRole('patient')">Patient</a></li>
+        <li><a href="pages/login.html" onclick="storeRole('therapist')">Therapist</a></li>
+        <li><a href="pages/login.html" onclick="storeRole('supervisor')">Supervisor</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Welcome Section -->
+  <section id ="Home" class="welcome-section">
+    <div class="welcome-container">
+      <div class="welcome-text">
+        <h1>Welcome to <span class="clinic-name">SpeechGuide</span></h1>
+        <p>Empowering lives through personalized speech therapy services, tailored for every individual's unique journey
+          to better communication.</p>
+        <a href="#how-we-work" class="explore-btn">Explore How We Work</a>
       </div>
-    </section>
+      <div class="welcome-image">
+        <img src="assets\images\index\heroimg.jpeg" alt="Speech Therapy" />
+      </div>
+    </div>
+  </section>
+  <div class="marquee-container">
+    <div class="marquee-content">
+        <img src="assets/images/index/home/banner1.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner2.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/index/home/banner4.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner3.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/index/home/banner1.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner2.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/index/home/banner3.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner4.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/index/home/banner1.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner2.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/index/home/banner4.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner3.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/index/home/banner1.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner2.jpg" alt="Image 2" class="marquee-image">
+        <img src="assets/images/index/home/banner3.jpg" alt="Image 1" class="marquee-image">
+        <img src="assets/images/index/home/banner4.jpg" alt="Image 2" class="marquee-image">
+    </div>
+</div>
 
-    <section class="info-section alternate">
-      <div class="info-content">
-        <div class="info-image">
-          <img src="assets\images\index\feature2.png" alt="Image 2" />
-        </div>
-        <div class="info-text">
-          <h2>
-            Visualize Your progress and your problems with clarity, and work on
-            them throughout
-          </h2>
-          <p>
-            Stay on top of your progress tracking journey through personalized
-            dashboards, which will have all your data in one place.
-          </p>
+  <!-- Why choose us -->
+  <section class="why-us">
+    <div class="why-us-container">
+      <div class="therapy-content">
+        <h2>Why Choose Us? </h2>
+        <div class="therapy-items-box">
+          <div class="therapy-item">
+            <i class="fas fa-heart"></i>
+            <p>Customized therapy plans and goals tailored to each individual</p>
+          </div>
+          <div class="therapy-item">
+            <i class="fas fa-handshake"></i>
+            <p>Progress tracking to monitor improvements effectively</p>
+          </div>
+          <div class="therapy-item">
+            <i class="fas fa-users"></i>
+            <p>A supportive environment that fosters growth and confidence</p>
+          </div>
+          <div class="therapy-item">
+            <i class="fas fa-comments"></i>
+            <p>Engaging speech exercises designed to make practice fun</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+  <!-- How We Work Section -->
+<section id="how-we-work" class="how-we-work-section">
+  <div class="container">
+    <h2>How We Work</h2>
+    <div class="steps-wrapper">
+      <!-- Step 1 -->
+      <div class="step">
+        <div class="icon">
+          <img src="assets/images/index/step1.png" alt="Step 1 Icon">
+        </div>
+        <h3>Step 1: Patient Registration</h3>
+        <p>Patients register on our platform, providing essential information to get matched with the right therapist.</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="step">
+        <div class="icon">
+          <img src="assets/images/index/step2.png" alt="Step 2 Icon">
+        </div>
+        <h3>Step 2: Therapy Plan Creation</h3>
+        <p>Therapists create a personalized therapy plan with goals and activities tailored to each patient’s needs.</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="step">
+        <div class="icon">
+          <img src="assets/images/index/step3.png" alt="Step 3 Icon">
+        </div>
+        <h3>Step 3: Session Scheduling</h3>
+        <p>Therapy sessions are scheduled and patients receive reminders, with options for in-person or online sessions.</p>
+      </div>
+      <!-- Step 4 -->
+      <div class="step">
+        <div class="icon">
+          <img src="assets/images/index/step4.png" alt="Step 4 Icon">
+        </div>
+        <h3>Step 4: Progress Review</h3>
+        <p>Supervisors review progress reports after each session and provide feedback, ensuring continuous improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="info-section">
-      <div class="info-content">
-        <div class="info-text">
-          <h2>
-            Targetted exercises in gamified forms that you can do from the
-            comfort of your home
-          </h2>
-          <p>
-            Based on the tracker of your speech tests, work on your weak points
-            through gamified assessments set by your guide, and practice them
-            from the comfort of your homes.
-          </p>
-        </div>
-        <div class="info-image">
-          <img src="assets\images\index\feature3.png" alt="Image 3" />
-        </div>
-      </div>
-    </section>
+<!-- About Us Section -->
+<section id="About" class="about-us-section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>At <strong>SpeechGuide</strong>, we are dedicated to transforming the way Speech-Language Therapy services are delivered. Our mission is to provide an innovative, digital-first platform that empowers <strong>patients, therapists, and supervisors</strong> to collaborate seamlessly. With a deep understanding of the challenges faced in clinical settings, especially the growing case load and limited supervision resources, we’ve developed a solution that streamlines the entire therapy process.</p>
 
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 SpeechGuide. All rights reserved.</p>
+        <p>From <strong>case allocation</strong> to therapy plan documentation, progress tracking, and teletherapy support, our platform ensures that therapy is both accessible and effective. We are committed to enhancing the quality of care, providing tools that improve communication, and fostering an environment where patients can reach their full potential.</p>
+
+        <p><em>Join us on our mission to make speech therapy more efficient, connected, and results-driven!</em></p>
       </div>
-    </footer>
-  </body>
+
+      <div class="about-image">
+        <img src="assets/images/index/about.webp" alt="About Us Image">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- review section -->
+  <h2 class="testimonials-heading">What Our Clients Are Saying</h2>
+  <div class="scroll-container">
+    <div class="reviews-wrapper">
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"The speech therapy sessions have been incredibly effective for my child. The therapists are highly skilled
+          and the progress has been remarkable. We couldn't be happier with the results!"</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">Yashika Awana</div>
+            <div class="reviewer-role">Parent</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/client1.jpg" alt="1">
+          </div>
+        </div>
+      </div>
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"The speech therapy sessions have been incredibly effective for my child. The therapists are highly skilled
+          and the progress has been remarkable. We couldn't be happier with the results!"</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">Riddhi Yadav</div>
+            <div class="reviewer-role">Parent</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/client2.jpg" alt="Jessica Martin">
+          </div>
+        </div>
+      </div>
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"The therapy sessions have been a game-changer for my child. The therapists are patient and provide excellent
+          support. We've seen significant improvements in both speech and confidence."</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">Anjana Davis</div>
+            <div class="reviewer-role">Parent</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/client1.jpg" alt="Emily Davis">
+          </div>
+        </div>
+        
+      </div>
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"The speech therapy program has been wonderful for my child. The personalized attention and innovative techniques have made a significant difference. I am so pleased with the results and the progress we’ve seen."</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">Vikram Bhatt</div>
+            <div class="reviewer-role">Parent</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/c lient3.png" alt="Sarah Lee">
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"The interactive exercises and supportive environment have truly helped me improve my speech. I feel more confident in my daily interactions and appreciate the guidance and encouragement I’ve received."</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">David Brown</div>
+            <div class="reviewer-role">Patient</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/client1.jpg" alt="David Brown">
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"Our experience with the speech therapists has been exceptional. The sessions are well-structured, and the therapists are dedicated and professional. We have seen a noticeable improvement in my child's speech skills."</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">Laura Smith</div>
+            <div class="reviewer-role">Parent</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/client2.jpg" alt="Laura Smith">
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"The speech therapy sessions have been transformative. The therapists are not only skilled but also genuinely caring. My confidence in speaking has greatly improved, and I am grateful for the support and progress."</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">Kevin White</div>
+            <div class="reviewer-role">Patient</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/client1.jpg" alt="Kevin White">
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-box">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <p>"I am thoroughly impressed with the quality of speech therapy my child has received. The structured approach and supportive atmosphere have made a big difference in his communication skills. Highly recommend!"</p>
+        <div class="review-content">
+          <div class="review-info">
+            <div class="reviewer-name">Amanda Clark</div>
+            <div class="reviewer-role">Parent</div>
+            <div class="review-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-image">
+            <img src="assets/images/index/c lient3.png" alt="Amanda Clark">
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="button">
+    <a href="#Home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+
+  <!-- footerr -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>SpeechGuide</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">pricings</a></li>
+            <li><a href="#">refund policy</a></li>
+            <li><a href="#">know more</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>meet our doctors</h4>
+          <ul>
+            <li><a href="#">stage 1</a></li>
+            <li><a href="#">stage 2</a></li>
+            <li><a href="#">stage 3</a></li>
+            <li><a href="#">stage 4</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="./assets/js/indexscript.js"></script>
+
 </html>
