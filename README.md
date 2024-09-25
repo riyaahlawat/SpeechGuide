@@ -19,6 +19,8 @@ SpeechGuide is a platform built for SIH 2024, designed to offer a comprehensive 
 5. **Supervisor Dashboard**: 
    - Supervisors can review therapists' work, provide suggestions and ratings, and oversee patient progress.
 
+These dashboards are quite extensive and offer many functionalities. Do visit and explore all of them. For now, you can try any credentials to log in.
+
 ## Technologies Used
 
 - Frontend: HTML, CSS, JavaScript
