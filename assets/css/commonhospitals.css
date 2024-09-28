@@ -12,6 +12,35 @@ body {
     line-height: 1.6;
 }
 
+  /* Sidebar Styles */
+  .sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: #2c3e50;
+    padding-top: 20px;
+  }
+  
+  .sidebar .nav {
+    list-style: none;
+  }
+  
+  .sidebar .nav-item {
+    margin: 20px 0;
+  }
+  
+  .sidebar .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 4px;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #34495e;
+  }
 /* Header Styles */
 header {
     background-color: #021428; /* Primary blue color */
